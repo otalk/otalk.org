@@ -1,0 +1,301 @@
+// Navigation
+
+nav ul
+  margin: 0
+
+  li
+    list-style-type: none
+
+  li, a
+    display: inline-block
+
+// Top Nav
+
+.top-nav
+  width: 100%
+  height: 40px
+  line-height: 40px
+  margin-bottom: 30px 
+  z-index: 10
+  position: relative
+
+  .toggle
+    visibility: hidden
+    position: absolute
+    left: -100%
+
+  .logo
+    float: left
+
+  li
+    padding: 0
+    float: left
+
+  a
+    display: block
+    padding: 0 15px
+    background-color: white
+
+    &:hover, &.active
+      background-color: lighten($blue-lighter, 30%)
+
+  .dropdown
+    background-color: white
+
+  &.dark
+    background-color: $blue-saturated
+
+    a
+      color: $blue-saturated-lighter
+      background-color: $blue-saturated
+
+      &:hover, &.active
+        background-color: $blue-saturated-light
+        color: lighten($blue-saturated-lighter, 40%)
+
+    .dropdown
+      background-color: $blue-saturated
+
+// Breadcrumbs
+
+.breadcrumbs
+  padding: 10px 5px
+
+  li:not(:first-child)
+    position: relative
+
+    &:after
+      content: ''
+      position: absolute
+      right: 100%
+      top: 1px
+      height: 100%
+      width: 1px
+      -webkit-transform: rotate(15deg)
+      -ms-transform: rotate(15deg)
+      transform: rotate(15deg)
+
+  a
+    &.breadcrumb-current
+      color: $gray
+      font-weight: $font-weight-bold
+
+// Pagination
+
+.pagination
+
+  a
+    padding: 3px 8px
+
+    &:hover
+      color: $gray
+
+    &.page-current
+      color: $blue
+
+    &.ss-icon
+      font-size: 8px
+
+    &.page-unavailable
+      cursor: auto
+
+// Tabs
+
+.tabs
+  border-bottom: 1px solid $gray-lighter
+
+  a
+    height: 2em
+    line-height: 2
+
+    &.active
+      position: relative
+      top: 2px
+      border: 1px solid $gray-lighter
+      border-bottom-color: transparent
+      border-radius: 3px 3px 0 0
+
+// Side Navigation
+
+.side-nav
+
+  li, a
+    display: block
+
+  li:not(:last-child)
+    a
+      border-bottom: 1px solid $gray-lighter
+
+  a
+    height: 35px
+    line-height: 35px
+
+    &:hover, &.active
+      background-color: lighten($blue-lighter, 60%)
+
+// Shared
+
+.breadcrumbs, .side-nav
+  border-radius: 3px
+  border: 1px solid $gray-lighter
+
+.breadcrumbs, .side-nav, .tabs
+  a
+    padding: 0 10px
+
+.tabs a.active
+  background-color: white
+
+.breadcrumbs li:not(:first-child):after
+  background-color: $gray-lighter
+
+.tabs a.active, .top-nav a, .side-nav a.active, .breadcrumbs a.current, .pagination a.active
+  font-weight: $font-weight-bold
+    
+.breadcrumbs a.breadcrumb-unavailable, .pagination a
+  color: $gray-light
+
+.breadcrumbs a, .pagination a
+  font-size: $font-small
+
+@media $smartphone
+
+  .breadcrumbs
+    padding: 0
+
+    li, a
+      display: block
+
+    li
+      border-bottom: 1px solid $gray-lighter
+
+      &:last-of-type
+        border: none
+
+      &:after
+        display: none
+
+    a
+      padding: 5px 10px
+
+@media $mobile-devices
+
+  .top-nav
+    
+    > ul, .ss-icon
+      display: none
+
+    label, span
+      display: block
+
+    label
+      float: right
+      height: 100%
+      margin-right: 15px
+      width: 35px
+      cursor: pointer
+      user-select: none
+
+      span
+        position: relative
+        top: 50%
+        margin-top: -1px
+
+        &:after, &:before
+          content: ''
+          position: absolute
+          left: 0
+
+        &:after
+          top: 400%
+
+        &:before
+          top: -400%
+
+    label span, label span:before, label span:after
+      height: 2px
+      width: 32px
+      background: $blue
+
+    .toggle:checked ~ ul
+      display: block
+      margin-top: 40px
+
+      > li, > li a
+        display: block
+        width: 100%
+
+      > li
+        float: none
+        border-top: 1px solid $gray-lighter
+
+        &:last-child
+          border-bottom: 1px solid $gray-lighter
+
+      .has-dropdown 
+        .dropdown
+          display: block
+          padding-bottom: 15px
+
+        li
+          float: left
+          padding-right: 20px
+          line-height: 2
+          border: 0
+
+        li a 
+          font-size: $font-small
+          font-weight: normal
+
+    &.dark
+      
+      label span, label span:before, label span:after
+        background: $blue-saturated-lighter
+
+      .toggle:checked ~ ul
+
+        > li
+          border-top: 1px solid $blue-saturated-light
+
+          &:last-child
+            border-bottom: 1px solid $blue-saturated-lighter
+
+@media $desktop
+  
+  .top-nav
+    
+    .has-dropdown
+      position: relative
+
+      > a
+        padding-right: 35px
+
+      .ss-icon
+        position: absolute
+        right: 15px
+        top: 2px
+        font-size: $font-smaller
+        color: $blue-light
+
+      .dropdown
+        display: none
+
+      &:hover
+        .dropdown
+          display: block
+          position: absolute
+          top: 100%
+          left: 0
+          min-width: 120%
+
+          li
+            display: block
+            border-bottom: 1px solid $gray-lighter
+
+    &.dark
+
+      .has-dropdown
+
+        .dropdown
+          li
+            border-bottom: 1px solid $blue-saturated-light
