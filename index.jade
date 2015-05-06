@@ -22,11 +22,12 @@ html(lang='en')
       section.intro
         h1#otalk Otalk
 
-        h2 Who needs silos and vendor lock-in?
+        h2 An open-source platform for building realtime applications
 
-        h3 Otalk is a suite of truly open tools for making modern communication a delightful experience for users and developers.
+        h3 
+        Otalk is a suite of truly open tools for making modern communication a delightful experience for users and developers. See the <a href='https://github.com/otalk'>GitHub Org</a> for all the code!
 
-        p &yet's products, <a href="http://talky.io">Talky</a> and <a href="http://talky.pro">Talky Pro</a> are built on the Otalk platform, a standards-based alternative to proprietary platforms for WebRTC.
+        p The upcoming version of &yet's <a href="https://beta.talky.io/">Talky</a> videochat service is built on the Otalk platform, a standards-based alternative to proprietary platforms for voice, video, chat, and more.
 
       section 
         h2 Otalk's primary components
@@ -35,25 +36,27 @@ html(lang='en')
           h3 Client-side tools:
 
           li 
-            a(href="http://simplewebrtc.com") SimpleWebRTC 
-            |  — highly modular set of WebRTC-related JavaScript modules.
+            a(href="https://simplewebrtc.com/") SimpleWebRTC 
+            |  — a highly modular set of JavaScript libraries for WebRTC
           li 
-            a(href="http://stanza.io") Stanza.io 
+            a(href="https://github.com/otalk/stanza.io") Stanza.io 
             |  — lets you do amazing things with <a href="http://xmpp.org">XMPP</a>. (No XML, just a beautifully simple JavaScript API.)
-
+          li 
+            a(href="https://github.com/otalk/jingle.js") JingleJS
+            |  — a generic Jingle session manager implementation
           li
-            a(href="http://github.com/andyet/otalk") Otalk IM
-            |  — a fully-featured, open source chat and video calling app for the browser.
+            a(href="https://github.com/otalk/otalk-im-client") Otalk IM
+            |  — a full-featured chat library for the browser (the foundation for <a href='https://getkaiwa.com/'>Kaiwa</a> among other apps)
 
         div
           h3 Server-side infrastructure:
 
           li XMPP signaling using most XMPP servers (though we <3 
-            a(href="http://prosody.im") Prosody
+            a(href="https://prosody.im") Prosody
             | )
           li 
             a(href="https://jitsi.org/Projects/JitsiVideobridge") Jitsi Videobridge
-            |  — state-of-the-art video router that makes it possible to serve many more clients than full-mesh WebRTC.
+            |  — state-of-the-art selective forwarding unit that makes it possible to serve many more clients than full-mesh WebRTC.
 
       section
         h2 More details, demos, and how-tos coming soon.
@@ -66,12 +69,12 @@ html(lang='en')
 
         p &yet is a veteran realtime communication team, made up of pioneers and leaders of open Internet communication standards and creators of technologies that have helped scores of developers build great experiences. 
 
-        p We've served clients like AT&T and Ericsson and we'd love to help you.
+        p We've served clients like AT&T and Ericsson, and we'd love to help you.
 
-        p We can even help with UX design and training building advanced single-page apps.
-        center
-          a.button.button-large(href="mailto:projects+otalk@andyet.com") Contact us
+        p We can even help with UX design and train your team on how to build advanced single-page apps.
+
+        a.button.button-large(href="https://andyet.com/talky") Contact us
 
       footer
-        a(href="http://andyet.com")
+        a(href="https://andyet.com")
           .andyet-logo
