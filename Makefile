@@ -11,5 +11,5 @@ index.html: index.jade
 	jade index.jade -o .
 
 css/main.css: $(STYLUS_FILES)
-	stylus -u yeticss ./css/main.styl
+	stylus -u yeticss ./css/main.styl \
 		-f css/main.styl -o ./css/main.css
