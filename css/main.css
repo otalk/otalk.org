@@ -1550,40 +1550,32 @@ tr.table-cell-alert a:hover {
   width: 600px;
   margin: 0 auto;
 }
-p {
-  font: 16px/1.5 'Sentinel SSm A', 'Sentinel SSm B', Georgia, Times, "Times New Roman", serif;
-}
-h2,
 h3 {
-  font-family: 'Gotham Rounded A', 'Gotham Rounded B', Helvetica, Arial, sans-serif;
-}
-h2 {
-  font-size: 2em;
-}
-h3 {
-  font-weight: 400;
-  font-size: 1.625em;
-}
-.intro,
-h2 {
-  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 24px;
 }
 section {
   border-top: 1px solid #e6eaed;
   padding: 40px 0;
 }
+section.intro,
+h2 {
+  text-align: center;
+}
 #otalk {
   text-indent: -9999em;
-  background-image: url("/otalk.png");
+  background-image: url("../images/otalk.png");
   width: 296px;
   height: 100px;
   background-size: 296px 100px;
-  margin: 0px auto;
+  margin: 0px auto 30px auto;
 }
-.button.button-large {
-  background-color: #ec008c;
-  color: #fff;
-  font-family: 'Gotham Rounded A', 'Gotham Rounded B', Helvetica, Arial, sans-serif;
+section.components ul {
+  margin-bottom: 40px;
+}
+.subscribe {
+  margin-bottom: 40px;
 }
 footer {
   border-top: 1px solid #e6eaed;
