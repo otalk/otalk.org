@@ -20,9 +20,7 @@
   "devDependencies": {
     "building-static-server": "^3.0.0",
     "jade": "^1.10.0",
-    "stylizer": "^2.1.0"
-  },
-  "dependencies": {
+    "stylus": "^0.51.1",
     "yeticss": "^6.0.7"
   }
 }

@@ -11,8 +11,5 @@ index.html: index.jade
 	jade index.jade -o .
 
 css/main.css: $(STYLUS_FILES)
-	stylus -u yeticss \
-		   -u autoprefixer-stylus \
-		   -c \
-		   -o ./css/main.styl
- 	stylizer -f css/main.styl -o ./css/main.css
+	stylus -u yeticss ./css/main.styl
+		-f css/main.styl -o ./css/main.css
