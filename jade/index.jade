@@ -11,8 +11,10 @@ html(lang='en')
 
     link(rel='icon', type='image/png', href='images/favicon.png')
 
-    link(rel='stylesheet', href='//cloud.typography.com/7773252/716084/css/fonts.css')
-    link(rel='stylesheet', href='/css/normalize.css')
+    script(src='//use.typekit.net/scp5nwo.js', async)
+    script.
+      try{Typekit.load();}catch(e){}
+
     link(rel='stylesheet', href='/css/main.css')
 
   body
@@ -28,39 +30,39 @@ html(lang='en')
 
         p The upcoming version of &yet's <a href="https://beta.talky.io/">Talky</a> videochat service is built on the Otalk platform, a standards-based alternative to proprietary platforms for voice, video, chat, and more.
 
-      section 
+      section.components
         h2 Otalk's primary components
 
         div
           h3 Client-side tools:
-
-          li 
-            a(href="https://simplewebrtc.com/") SimpleWebRTC 
-            |  — a highly modular set of JavaScript libraries for WebRTC
-          li 
-            a(href="https://github.com/otalk/stanza.io") Stanza.io 
-            |  — lets you do amazing things with <a href="http://xmpp.org">XMPP</a>. (No XML, just a beautifully simple JavaScript API.)
-          li 
-            a(href="https://github.com/otalk/jingle.js") JingleJS
-            |  — a generic Jingle session manager implementation
-          li
-            a(href="https://github.com/otalk/otalk-im-client") Otalk IM
-            |  — a full-featured chat library for the browser (the foundation for <a href='https://getkaiwa.com/'>Kaiwa</a> among other apps)
+          ul
+            li 
+              a(href="https://simplewebrtc.com/") SimpleWebRTC 
+              |  — a highly modular set of JavaScript libraries for WebRTC
+            li 
+              a(href="https://github.com/otalk/stanza.io") Stanza.io 
+              |  — lets you do amazing things with <a href="http://xmpp.org">XMPP</a>. (No XML, just a beautifully simple JavaScript API.)
+            li 
+              a(href="https://github.com/otalk/jingle.js") JingleJS
+              |  — a generic Jingle session manager implementation
+            li
+              a(href="https://github.com/otalk/otalk-im-client") Otalk IM
+              |  — a full-featured chat library for the browser (the foundation for <a href='https://getkaiwa.com/'>Kaiwa</a> among other apps)
 
         div
           h3 Server-side infrastructure:
-
-          li XMPP signaling using most XMPP servers (though we <3 
-            a(href="https://prosody.im") Prosody
-            | )
-          li 
-            a(href="https://jitsi.org/Projects/JitsiVideobridge") Jitsi Videobridge
-            |  — state-of-the-art selective forwarding unit that makes it possible to serve many more clients than full-mesh WebRTC.
+          ul
+            li XMPP signaling using most XMPP servers (though we <3 
+              a(href="https://prosody.im") Prosody
+              | )
+            li 
+              a(href="https://jitsi.org/Projects/JitsiVideobridge") Jitsi Videobridge
+              |  — state-of-the-art selective forwarding unit that makes it possible to serve many more clients than full-mesh WebRTC.
 
       section
         h2 More details, demos, and how-tos coming soon.
         center
-          a.button.button-large(href="https://confirmsubscription.com/h/r/B15DD9807C54FC55") Subscribe to updates
+          a.subscribe.button.button-large(href="https://confirmsubscription.com/h/r/B15DD9807C54FC55") Subscribe to updates
 
         h3 Want help implementing Otalk?
 

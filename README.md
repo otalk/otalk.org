@@ -22,4 +22,4 @@ npm install
 npm run build
 ```
 
-This will compile the required files as per the makefile. Manifest.in lists files which can be excluded from the build.
+This will compile the site into the public folder.

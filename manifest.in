@@ -1,3 +1,0 @@
-prune node_modules
-exclude ./**/*.styl
-exclude ./**/*.jade
