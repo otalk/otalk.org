@@ -1,34 +1,33 @@
-build:
-  image: andyet/node:4
-  commands:
-    - npm install
-    - NODE_ENV=production npm run build
-publish:
-  upload_stage:
-    image: s3_sync:native
+pipeline:
+  build:
+    image: andyet/node:4
+    commands:
+      - npm install
+      - NODE_ENV=production npm run build
+  now_stage:
+    image: andyet/drone-now:latest
+    pull: true
+    deploy_name: otalk.org
+    type: static
+    team: andyet
+    directory: public
     when:
-      branch: master
-      event: push
-    access_key: $$AWS_ACCESS_KEY
-    secret_key: $$AWS_SECRET_KEY
-    bucket: stage.otalk.org
-    region: $$AWS_REGION
-    acl: public-read
-    source: public
-    delete: true
-  upload_production:
-    image: s3_sync:native
+      event: tag
+    secrets: [ now_token ]
+  now_prod:
+    image: andyet/drone-now:latest
+    pull: true
+    deploy_name: otalk.org
+    type: static
+    team: andyet
+    alias: otalk.org
+    cleanup: true
+    directory: public
     when:
       event: deployment
-    access_key: $$AWS_ACCESS_KEY
-    secret_key: $$AWS_SECRET_KEY
-    bucket: otalk.org
-    region: $$AWS_REGION
-    acl: public-read
-    source: public
-    delete: true
-notify:
+    secrets: [ now_token ]
   slack:
-    webhook_url: $$SLACK_HOOK
+    image: plugins/slack
     username: drone
     channel: alerts
+    secrets: [ slack_webhook ]
